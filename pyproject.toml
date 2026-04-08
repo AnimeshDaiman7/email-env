@@ -1,14 +1,9 @@
 [project]
 name = "email-env"
 version = "0.1.0"
-description = "Email classification OpenEnv environment"
-authors = [{ name = "Animesh Daiman" }]
 dependencies = [
     "openenv>=0.2.0"
 ]
 
 [project.scripts]
-server = "server.app:main"   
-
-[tool.openenv]
-entrypoint = "inference.py"
+server = "server.app:main"
