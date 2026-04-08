@@ -78,9 +78,17 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        if self.path == "/state":
+        # ✅ ROOT ENDPOINT (FIXED)
+        if self.path == "/":
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b"Email RL Environment Running")
+
+        # ✅ STATE ENDPOINT
+        elif self.path == "/state":
             self._set_headers()
             self.wfile.write(json.dumps(env.state()).encode())
+
         else:
             self.send_error(404)
 
