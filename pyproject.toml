@@ -6,9 +6,8 @@ dependencies = [
     "openenv>=0.2.0"
 ]
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["server*"]
+[tool.setuptools]
+packages = ["server"]
 
 [project.scripts]
-server = "server.main:main"
+server = "server.app:main"
